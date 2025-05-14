@@ -1,0 +1,10 @@
+sentence = input("PLease enter a sentence: ").strip()
+words = sentence.split()
+unique_combinations = set()
+for i in range(len(words)):
+    for j in range(i+1, len(words)):
+        pair = tuple(sorted([words[i], words[j]]))
+        unique_combinations.add(pair)
+sorted_combinations = sorted(unique_combinations)
+for w1, w2 in sorted_combinations:
+    print(w1, w2)
